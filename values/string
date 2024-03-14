@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GSB-RV</string>
+    <string name="matricule">Matricule :</string>
+    <string name="mdp">Mot de passe :</string>
+    <string name="btn_valider">VALIDER</string>
+    <string name="btn_annuler">ANNULER</string>
+    <string name="btn_saisir">SAISIR UN RAPPORT DE VISITE</string>
+    <string name="btn_consulter">CONSULTER UN RAPPORT DE VISITE</string>
+    <string name="btn_formulaire">FORMULAIRE DE SAISIE</string>
+    <string name="btn_selection">SELECTION DU MOIS ET DE ANNÉE</string>
+    <string name="Mois">Mois:</string>
+    <string name="Annees">Année:</string>
+    <string name="btn_ModifierDate">MODIFICATION DE LA DATE</string>
+    <string name="btn_ValiderSaisie">VALIDATION SAISIE</string>
+    <string name="btn_AnnulerSaisie">ANNULATION SAISIE</string>
+    <string name="btn_AfficherListeRapport">AFFICHE LISTE RAPPORT</string>
+
+
+
+</resources>
