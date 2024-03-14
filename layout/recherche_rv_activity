@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/Selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selection du mois et de l'année"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/Mois"
+        android:text="@string/Mois"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spMois"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:drawSelectorOnTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/spAnnees"
+        android:text="@string/Annees"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spAnnees"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:drawSelectorOnTop="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_AfficherListeRapport"
+        android:id="@+id/AfficherListeRapport"
+        android:onClick="btnAfficherListeRapport"/>
+
+</LinearLayout>
+
