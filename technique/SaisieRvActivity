@@ -1,0 +1,77 @@
+package fr.gsb.rv.technique;
+
+import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+import fr.gsb.R;
+import android.view.View;
+
+public class SaisieRvActivity extends AppCompatActivity {
+
+    TextView tvDateSelectionnee;
+    GregorianCalendar laDateCommande;
+
+    private static final String [] lesPraticiens = {"Charles","Kevin","Jassim","Michel","Gustavo","Antonio","Maria","Myriam"} ;
+    Spinner spPraticien;
+
+    private static final String [] lesMotifs = {"Rendez-vous","Consultation","Renseignement","Plainte","Reclamation"} ;
+    Spinner spMotif;
+
+    private static final String [] lesCoefConf = {"1","2","3","4","5"} ;
+    Spinner spCoefConf;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.saisie_rv_activity);
+
+        spPraticien = (Spinner) findViewById(R.id.spPraticien);
+        ArrayAdapter<String> aaPraticien = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item , lesPraticiens);
+        aaPraticien.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spPraticien.setAdapter(aaPraticien);
+
+
+        spMotif= (Spinner) findViewById(R.id.spMotif);
+        ArrayAdapter<String> aaMotif = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item , lesMotifs);
+        aaMotif.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spMotif.setAdapter(aaMotif);
+
+        spCoefConf= (Spinner) findViewById(R.id.spCoefConf);
+        ArrayAdapter<String> aaCoefConf = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item , lesCoefConf);
+        aaCoefConf.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spCoefConf.setAdapter(aaCoefConf);
+
+
+     DatePickerDialog.OnDateSetListener ecouteurDate = new DatePickerDialog.OnDateSetListener() {
+           @Override
+            public void onDateSet(DatePicker View, int year, int monthOfYear, int dayOfMonth) {
+                String dateCommande = String.format("%02d/%02d/%04d",dayOfMonth,monthOfYear+1,year);
+
+               tvDateSelectionnee.setText(dateCommande);
+                laDateCommande = new GregorianCalendar(year,monthOfYear, dayOfMonth);
+
+            }
+     };
+
+        public void selectionnerDateCommande() {
+            GregorianCalendar aujourdhui = new GregorianCalendar();
+            int jour = aujourdhui.get(Calendar.DAY_OF_MONTH);
+            int mois = aujourdhui.get(Calendar.MONTH);
+            int annee = aujourdhui.get(Calendar.YEAR);
+
+            new DatePickerDialog(this, ecouteurDate, annee, mois, jour).show();
+        }
+    }
+
+}
